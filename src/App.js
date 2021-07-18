@@ -1,45 +1,36 @@
-import React, { useState, useEffect } from "react";
-import styled from "styled-components";
-import * as styles from "./styles";
-import * as lib from "./lib";
-import LandingPage from "./components/LandingPage";
-import Component from "./components/Component";
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+import * as styles from './styles';
+import * as lib from './lib';
+import LandingPage from './components/LandingPage';
+import Component from './components/Component';
 
 export default function App() {
   const [component, setComponent] = useState();
-  const [routeColor, setRouteColor] = useState("");
+  const [routeColor, setRouteColor] = useState('');
 
   useEffect(() => {
     setComponent(<LandingPage />);
-    setRouteColor("white");
+    setRouteColor('white');
   }, []);
 
   return (
     <AppContainer className="app-container">
       {window.innerWidth >= 800 && (
         <>
-          <AppRouteWrapper
-            className="app-logo-wrapper"
-            style={{ alignItems: "flex-start" }}
-          >
-            <AppRouteDivider
-              className="app-logo-divider"
-              style={{ marginLeft: "20px" }}
-            />
+          <AppRouteWrapper className="app-logo-wrapper" style={{ alignItems: 'flex-start' }}>
+            <AppRouteDivider className="app-logo-divider" style={{ marginLeft: '20px' }} />
             <a
               href="mailto:zacharylasky123@gmail.com"
               target="_blank"
               rel="noreferrer"
-              style={{ textDecoration: "none" }}
-            >
+              style={{ textDecoration: 'none' }}>
               <AppRouteSection
                 className="app-logo-section"
                 onClick={() => {
-                  window.location = {};
                   setComponent(<LandingPage />);
-                  setRouteColor("white");
-                }}
-              >
+                  setRouteColor('white');
+                }}>
                 <AppRoute className="app-route">Email me!</AppRoute>
                 <AppRouteSymbol className="app-route-symbol">•</AppRouteSymbol>
               </AppRouteSection>
@@ -47,18 +38,15 @@ export default function App() {
           </AppRouteWrapper>
         </>
       )}
-      <AppComponentWrapper className="app-component-wrapper">
-        {component}
-      </AppComponentWrapper>
+      <AppComponentWrapper className="app-component-wrapper">{component}</AppComponentWrapper>
       <AppRouteWrapper className="app-route-wrapper">
         <AppRouteSection
           className="app-route-section"
           onClick={() => {
             setComponent(<Component content={lib.missionContent} />);
-            setRouteColor("red");
+            setRouteColor('red');
           }}
-          routeColor={routeColor === "red" && styles.red}
-        >
+          routeColor={routeColor === 'red' && styles.red}>
           <AppRoute className="app-route">Technology</AppRoute>
           <AppRouteSymbol className="app-route-symbol">•</AppRouteSymbol>
         </AppRouteSection>
@@ -67,10 +55,9 @@ export default function App() {
           className="app-route-section"
           onClick={() => {
             setComponent(<Component content={lib.purposeContent} />);
-            setRouteColor("green");
+            setRouteColor('green');
           }}
-          routeColor={routeColor === "green" && styles.green}
-        >
+          routeColor={routeColor === 'green' && styles.green}>
           <AppRoute className="app-route">Biography</AppRoute>
           <AppRouteSymbol className="app-route-symbol">•</AppRouteSymbol>
         </AppRouteSection>
@@ -79,10 +66,9 @@ export default function App() {
           className="app-route-section"
           onClick={() => {
             setComponent(<Component content={lib.promiseContent} />);
-            setRouteColor("yellow");
+            setRouteColor('yellow');
           }}
-          routeColor={routeColor === "yellow" && styles.yellow}
-        >
+          routeColor={routeColor === 'yellow' && styles.yellow}>
           <AppRoute className="app-route">Connect</AppRoute>
           <AppRouteSymbol className="app-route-symbol">•</AppRouteSymbol>
         </AppRouteSection>
@@ -90,11 +76,10 @@ export default function App() {
       <AppEmailWrapper className="app-email-wrapper">
         <AppEmail className="app-email">
           <a
-            style={{ color: "lightGray" }}
+            style={{ color: 'lightGray' }}
             href="mailto:zacharylasky123@gmail.com"
             target="_blank"
-            rel="noreferrer"
-          >
+            rel="noreferrer">
             zacharylasky123@gmail.com
           </a>
         </AppEmail>
@@ -103,7 +88,7 @@ export default function App() {
   );
 }
 
-const AppContainer = styled("div")`
+const AppContainer = styled('div')`
   display: flex;
   flex-direction: column;
   background: rgb(0, 0, 0);
@@ -123,7 +108,7 @@ const AppContainer = styled("div")`
   bottom: 0;
 `;
 
-const AppComponentWrapper = styled("div")`
+const AppComponentWrapper = styled('div')`
   height: 3000px;
   display: flex;
   justify-content: center;
@@ -134,14 +119,14 @@ const AppComponentWrapper = styled("div")`
   }
 `;
 
-const AppRouteWrapper = styled("div")`
+const AppRouteWrapper = styled('div')`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 `;
 
-const AppRouteSection = styled("div")`
+const AppRouteSection = styled('div')`
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   display: flex;
   justify-content: space-between;
@@ -164,7 +149,7 @@ const AppRouteSection = styled("div")`
   }
 `;
 
-const AppRouteDivider = styled("div")`
+const AppRouteDivider = styled('div')`
   border-left: 5px solid white;
   border-right: 5px solid white;
   width: 80px;
@@ -176,7 +161,7 @@ const AppRouteDivider = styled("div")`
   }
 `;
 
-const AppRoute = styled("div")`
+const AppRoute = styled('div')`
   font-size: 12px;
 
   @media (min-width: ${styles.tablet}) {
@@ -192,7 +177,7 @@ const AppRouteSymbol = styled(AppRoute)`
   }
 `;
 
-const AppEmailWrapper = styled("div")`
+const AppEmailWrapper = styled('div')`
   display: flex;
   height: 250px;
   justify-content: flex-end;
@@ -200,7 +185,7 @@ const AppEmailWrapper = styled("div")`
   margin-top: 20px;
 `;
 
-const AppEmail = styled("div")`
+const AppEmail = styled('div')`
   display: flex;
   align-self: flex-end;
   padding-bottom: 10px;
