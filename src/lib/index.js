@@ -29,7 +29,7 @@ export const promiseContent = {
   text: {
     first: 'I like taking on new projects or hearing about software news.',
     second:
-      "I'm also available for consulting or mentoring other who want to get into software development",
+      "I'm also available for consulting or mentoring others who want to get into software development",
     third: "If you'd like to connect, send me an email or add me on LinkedIn."
   },
   textSectionColor: styles.yellow,
