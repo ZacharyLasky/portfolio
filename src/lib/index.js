@@ -17,7 +17,7 @@ export const purposeContent = {
     first:
       'A few years ago I made the transition from working in music to being a software engineer.',
     second:
-      'After I graduated college with a bachelors degree in music business, I attended Lambda School in to help me achieve my goal of learning to code.',
+      'After I graduated college with a bachelors degree in music business, I attended Lambda School to help me achieve my goal of learning to code.',
     third:
       "Now I've worked in Boston, MA as a software engineer for a startup, Talla and currently for a much larger company, Healthgrades."
   },
