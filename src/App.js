@@ -74,6 +74,15 @@ export default function App() {
         </AppRouteSection>
       </AppRouteWrapper>
       <AppEmailWrapper className="app-email-wrapper">
+        <AppEmail className="app-LinkedIn">
+          <a
+            style={{ color: 'lightGray' }}
+            href="https://www.linkedin.com/in/zachary-d-lasky"
+            target="_blank"
+            rel="noreferrer">
+            LinkedIn
+          </a>
+        </AppEmail>
         <AppEmail className="app-email">
           <a
             style={{ color: 'lightGray' }}
@@ -180,7 +189,7 @@ const AppRouteSymbol = styled(AppRoute)`
 const AppEmailWrapper = styled('div')`
   display: flex;
   height: 250px;
-  justify-content: flex-end;
+  justify-content: space-between;
   margin: 0 10px;
   margin-top: 20px;
 `;
